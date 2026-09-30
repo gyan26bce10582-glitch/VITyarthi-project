@@ -1,0 +1,65 @@
+Hostel Attendance Manager
+
+A miniature command-line utility to maintain attendance of hostel residents, replacing spreadsheets and paper records with a simple menu-based interface in the terminal.
+
+Overview
+
+Anyone who has stayed in a hostel knows how the warden (or a representative) takes rounds with a notebook, asking everyone to mark their presence on the list. This project is a minuscule application simulating the same process digitally.
+
+The application is started, and a menu is displayed in the command-line interface (CLI). The user can view the attendance list, update it, or add new students to it, with changes being saved in memory as a Python dictionary for the duration of the application's runtime. This is a great exercise for someone just starting out with Python to get comfortable with data structures and control flow in the language.
+
+Note: All changes are lost on exiting the application as it only stores data in memory.
+
+Features
+
+Ability to view attendance – display a formatted list of all students registered with the hostel and their current attendance status.
+Update attendance – update the status of a registered student to Present or Absent.
+Add new students – add students with a default attendance status of Present.
+Duplicated or extra spaces in names are normalized and capitalized.
+Input validation – any invalid input, such as incorrect status, non-existent student name, or invalid option in the menu, displays an appropriate error message instead of crashing the application.
+Simple looped CLI menu – the user is presented with a menu and can navigate it using numbers to select an option.
+Technologies / Tools Used
+Tool / Language Usage
+Python 3 Only Python is used; no third-party packages are necessary.
+Built-in dict Python's built-in dictionary is used to store student names and statuses in memory.
+Terminal or Command Prompt The application is run in the CLI.
+Any text editor or IDE Python files can be opened in VS Code, PyCharm, IDLE, or any other editor or IDE.
+Instructions
+1. Install Python
+Make sure that Python 3 is installed on the system. The user can install Python from python.org. Open up a terminal and type the following command to verify the installation:
+bash
+python --version
+This should display Python 3.x.x. If it does not, Python is not installed or the PATH variable is not set. (The command may be python3 for some Linux distributions.)
+2. Get project file
+Download or copy vityarthi.py into the desired destination on the system. If the project is cloned using Git, the following commands can be used:
+bash
+git clone
+cd
+3. Run the application
+In the terminal, run the following command:
+bash
+python vityarthi.py
+Depending on the operating system, it may be necessary to use python3 vityarthi.py instead.
+4. Using the application
+After the application is run successfully, the following screen will appear:
+HOSTEL MENU
+1. View Attendance
+2. Update Attendance
+3. Add New Student
+4. Exit
+Select an option:
+The user can enter one of the numbers listed and hit Enter to select an option.
+Testing
+As this project does not make use of any testing framework, its test cases are to be executed manually. Simply run the application in the CLI and go through the following checklist of valid and invalid inputs and their expected outputs.
+Test case Expected output Description
+1. Choose 1 View a list of students and their attendance details. This option displays all of the students currently in the attendance book with their status.
+2. Choose 3 → enter Ananya Sharma Register a new student. The student is added to the dictionary with a default status of Present.
+3. Choose 1 again View updated attendance. Ananya Sharma's attendance is displayed as Present.
+4. Choose 3 → enter ananya sharma  View error message. This student has already been added; the name is case- and space-insensitive.
+5. Choose 2 → enter Ananya Sharma → enter Absent Update student's attendance. Student's attendance is successfully updated to Absent.
+6. Choose 2 → enter Ananya Sharma → enter Maybe View error message. Invalid attendance status.
+7. Choose 2 → enter Nobody → enter Absent View error message. The student has not been registered.
+8. At the main menu, choose 9 or press Enter View error message. Invalid option.
+9. Choose 4 View message. Exit the application. The application displays Attendance completed and exists.
+
+Statuses are case-insensitive and can be entered as Present, PRESENT, or present.
